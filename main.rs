@@ -3,4 +3,5 @@ fn main() {
     println!("Some text: {}", msg);
 }
 
-//binary executable code
+//binary executable code or library
+//LLVM -> binary code
