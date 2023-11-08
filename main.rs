@@ -1,7 +1,8 @@
 fn main() {
     //** often used
-    //mutable variable 
+    //mutable variable
     let mut msg = "Hellow World";
+
     println!("{}", msg);
 
     msg = "Hi there";
