@@ -1,23 +1,23 @@
 fn main() {
-    let msg = "Hello World";
-    let msg2 = print_welcome(msg);
+    let is_it_fun: bool = true;
 
-    println!("{}", msg2)
+    //i32 -> signed integer of 32bits
+    // -> signed can hold positive or negative value
+    let num1: i32 = -10;
+
+    //u8 -> unsigned integer of 8bits
+    // -> only positive value
+    // HOW many numbers? -> 2^8-1 = 255
+    // u32 -> 2^32-1 postive numbers
+    let small_num1: u8 = 255;
+    let small_num2: u16 = 256;
+
+    // -2^7-1 -> 2^7-1
+    // -128 -> 127
+    let small_num3: i8 = -128;
+
+    // operating system related types
+    let sys_num1: isize = -10;
+    //x32 system usize->u32, x64 usize->u64
+    let sys_num2: usize = 10;
 }
-
-// ------------/
-//RETURN METHOD/
-// ------------/
-
-// arrow -> &str
-fn print_welcome(text: &str) -> &str {
-    println!("{}", text);
-    let new_msg = "Hi There";
-
-    // method 1:
-    // return new_msg;
-    new_msg //method 2
-}
-
-//binary executable code or library
-//LLVM -> binary code
