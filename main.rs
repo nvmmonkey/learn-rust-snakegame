@@ -5,16 +5,17 @@ fn main() {
     println!("{}", msg2)
 }
 
+// ------------/
+//RETURN METHOD/
+// ------------/
+
+// arrow -> &str
 fn print_welcome(text: &str) -> &str {
     println!("{}", text);
     let new_msg = "Hi There";
 
-    // ------------/
-    //RETURN METHOD/
-    // ------------/
-
-
-    // arrow -> &str method 1: return new_msg;
+    // method 1:
+    // return new_msg;
     new_msg //method 2
 }
 
