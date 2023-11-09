@@ -1,20 +1,21 @@
 fn main() {
-    //** often used
-    //mutable variable
-    let mut msg = "Hellow World";
+    let msg = "Hello World";
+    let msg2 = print_welcome(msg);
 
-    println!("{}", msg);
+    println!("{}", msg2)
+}
 
-    msg = "Hi there";
-    println!("Some text: {}", msg);
+fn print_welcome(text: &str) -> &str {
+    println!("{}", text);
+    let new_msg = "Hi There";
 
-    //** not often used
-    //immutable varible double declare is ok in rust
-    let age = 10;
-    println!("{}", age);
+    // ------------/
+    //RETURN METHOD/
+    // ------------/
 
-    let age = 30;
-    println!("{}", age);
+
+    // arrow -> &str method 1: return new_msg;
+    new_msg //method 2
 }
 
 //binary executable code or library
