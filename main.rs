@@ -19,23 +19,20 @@
 
 fn main() {
     let msg = String::from("Hello"); //msg coming into the scope
-    print_msg(msg); //msg moved into the print_msg function
+    let msg2 = extend_msg(msg);
 
-    //msg is no longer valid
-    println!("{}", msg);
+    // METHOD 2
+    // let mut msg = String::from("Hello");
+    // msg =  extend_msg(msg);
+
+    // METHOD 3
+    // let msg = String::from("Hello");
+    // let msg =  extend_msg(msg);
+
+    println!("{}", msg2);
 }
-//msg is going out of the scope,
-//but nothing more will happen because it was moved into print_msg
 
-fn print_msg(a: String) {
-    //a comes into the scope
-    println!("{}", a);
-
-    let c = a; //c is coming into the scope, a moved into the c
-
-    //a is no longer valid
-    println!("{}", a);
+fn extend_msg(mut a: String) -> String {
+    a.push_str(" World");
+    a //return moved value
 }
-//a is going out of the scope, but nothing more will happen because it was moved
-//c is going out of the scope
-//,and, "drop" is called which clears the memory from the HEAP
