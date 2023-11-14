@@ -1,20 +1,18 @@
 fn main() {
     // you can place on stack only value with static size
     let a = 10;
-    let b = a;
+    let b = a; //copy value
     let c = 15;
     let d = add(a, b);
 
-    // Store Pointer/Capacity/Length in the Stack Frame
-    // String acutally store on HEAP memory
-    // same as let msg: &str = "Hello";
-    let msg = String::from("Hello");
+    let msg = String::from("Hello"); //string move from stack
+    let msg2 = msg; //string borrow from previous stack and message
+    println!("{}", msg); 
 
-    println!("{}", msg)
+    //can not use msg, because it was moved to msg2
 }
 
 fn add(x: u32, y: u32) -> u32 {
     let sum = x + y;
-    // return sum;
-    sum //same as return sum
+    sum
 }
