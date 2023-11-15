@@ -1,38 +1,14 @@
-// fn main() {
-//     // you can place on stack only value with static size
-//     let a = 10;
-//     let b = a; //copy value
-//     let c = 15;
-//     let d = add(a, b);
-
-//     let msg = String::from("Hello"); //string move from stack
-//     let msg2 = msg; //string borrow from previous stack and message
-//     println!("{}", msg);
-
-//     //can not use msg, because it was moved to msg2
-// }
-
-// fn add(x: u32, y: u32) -> u32 {
-//     let sum = x + y;
-//     sum
-// }
-
 fn main() {
-    let msg = String::from("Hello"); //msg coming into the scope
-    let msg2 = extend_msg(msg);
+    let msg = String::from("Hello");
+    let msg2: &String = &msg;
+    // & using reference, not moved data
+    // msg2 is not owner of data
+    // msg2 is "borrowing" a reference to msg
 
-    let age = 30;
-    extend_age(age);
-    println!("{}", age);
-
+    println!("{}", msg);
     println!("{}", msg2);
 }
 
-fn extend_msg(mut a: String) -> String {
-    a.push_str(" World");
-    a //return moved value
-}
-
-fn extend_age(mut a: u32) {
-    a += 100;
-}
+// msg and msg2 going out of scope
+// msg2 is not dropped because it does not have ownership of what it refers to
+// msg is dropped
