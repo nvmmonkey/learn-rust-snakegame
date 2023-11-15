@@ -21,13 +21,9 @@ fn main() {
     let msg = String::from("Hello"); //msg coming into the scope
     let msg2 = extend_msg(msg);
 
-    // METHOD 2
-    // let mut msg = String::from("Hello");
-    // msg =  extend_msg(msg);
-
-    // METHOD 3
-    // let msg = String::from("Hello");
-    // let msg =  extend_msg(msg);
+    let age = 30;
+    extend_age(age);
+    println!("{}", age);
 
     println!("{}", msg2);
 }
@@ -35,4 +31,8 @@ fn main() {
 fn extend_msg(mut a: String) -> String {
     a.push_str(" World");
     a //return moved value
+}
+
+fn extend_age(mut a: u32) {
+    a += 100;
 }
