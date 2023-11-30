@@ -1,16 +1,17 @@
 fn main() {
     let mut msg = String::from("Hello");
-    let msg2: &mut String = &mut msg;
-    // & using reference, not moved data
-    // msg2 is not owner of data
-    // msg2 is "borrowing" a reference to msg
+    let msg3 = &msg;
+    println!("{}", msg3);
+    let msg2 = &mut msg;
 
-    msg2.push_str(" World");
+    unpredictable_mutate(msg2); //mutable already
 
-    println!("{}", msg2);
     println!("{}", msg);
+    // if place before msg2,
+    // it think you are trying to immutable a already
+    // borrow mutable variable
 }
 
-// msg and msg2 going out of scope
-// msg2 is not dropped because it does not have ownership of what it refers to
-// msg is dropped
+fn unpredictable_mutate(val: &mut String) {
+    val.push_str("_unpredictable");
+}
