@@ -1,7 +1,22 @@
 fn main() {
     let a = 10;
     let b = &a;
-    let c = &b;
+    let mut c = &b;
+    let d = b;
 
-    println!("{}", a == **c); //double reference **
+    let e = &&100;
+    c = e;
+
+    println!("Value of c: {:p}", c);
+    println!("Value of e: {:p}", e);
+    println!("Address of 100: {:p}", &(**e));
+
+    println!("Value of c: {:p}", *c);
+    println!("Value of e: {:p}", *e);
+    println!("Address of 100: {:p}", &(**c));
+
+    // println!("Value of a: {:p}", &a);
+    // println!("Value of b: {:p}", b);
+    // println!("Value of c: {:p}", c);
+    // println!("Value of d: {:p}", d);
 }
